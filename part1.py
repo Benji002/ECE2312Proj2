@@ -6,15 +6,15 @@ import librosa.display
 sampleRate = 22050
 frequency = 5000
 length = 5
-attenuation = 100 #higher values = more attenuation. 100 is probably as low as you want to go if you value your hearing
+#attenuation = 100 #higher values = more attenuation. 100 is probably as low as you want to go if you value your hearing
 
 t = np.arange(0, length, 1/(sampleRate))
 t2 = np.linspace(0, frequency/2, sampleRate * length)
 t = np.multiply(t,t2) # do frequency instead of t2 for constant frequency
 print(type(t))
-y = np.sin(2 * np.pi * t)  #  Has frequency of 440Hz
+y = 0.25*np.sin(2 * np.pi * t)  #  Has frequency of 440Hz
     
-m = np.max(np.abs(y))*attenuation
+m = np.max(np.abs(y))
 print("m", m)
 
 maxint16 = np.iinfo(np.int16).max  # == 2**15-1
