@@ -10,11 +10,12 @@ import librosa.display
 y, sr = librosa.load('sound.wav', mono= False)
 y2, sr2 = librosa.load('speechsine.wav')
 y3, sr3 = librosa.load('sound.wav')
+#y =np.zeros(y.shape) this doesn't work! The audio file refuses to write like this
 
 print(y)
-print(y.size)
-print(y2.size)
-print(y3.size)
+print(y.shape)
+print(y2.shape)
+print(y3.shape)
 y[1] = y2.copy()
 y[0] = y3.copy()
 print(y)

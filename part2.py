@@ -21,7 +21,7 @@ t = np.arange(0, length, 1/(sr))
 t2 = np.linspace(0, frequency/2, sr * length)
 t = np.multiply(t,frequency) # do frequency instead of t2 for constant frequency
 print(type(t))
-y2 = 0.01*np.sin(2 * np.pi * t)  #  Has frequency of 440Hz
+y2 = 0.01*np.sin(2 * np.pi * t)  #  0.01 is the magnitude here
 
 y = np.add(y, y2)
 
